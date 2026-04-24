@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>プライバシーポリシー | PassLog</title>
+  <meta name="description" content="PassLog（パスワード管理アプリ）のプライバシーポリシー。収集情報、第三者サービス、データのセキュリティ、保持と削除について。" />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" href="image/icon.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="legal-page">
+  <main>
+    <div class="legal-container">
+      <header class="legal-header">
+        <h1 class="legal-title">プライバシーポリシー</h1>
+        <p class="legal-meta">最終更新日: 2026年4月23日</p>
+      </header>
+
+      <article class="legal-content">
+        <section class="legal-section">
+          <h2>1. 基本方針</h2>
+          <p>PassLog（以下「本アプリ」）は、ユーザーのプライバシー保護を最優先とします。パスワードデータは端末内でのみ管理し、開発者サーバーへの送信は行いません。アカウント登録も不要です。</p>
+          <p>Freeプランでは広告配信サービス（Google AdMob）を通じてバナー広告を表示します。iOSではApp Tracking Transparency（ATT）の許可状況に応じて、パーソナライズド広告または非パーソナライズド広告を配信します。Premiumプランでは広告は表示されません。</p>
+        </section>
+
+        <section class="legal-section">
+          <h2>2. 収集する情報</h2>
+          <p>開発者がユーザーの個人情報を直接収集することはありません。本アプリでは、利用に必要な情報を以下のように保存・処理します。</p>
+          <table>
+            <thead>
+              <tr><th>分類</th><th>内容</th><th>保存先</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>認証情報</td><td>PINのソルト付きハッシュ、生体認証の有効/無効</td><td>端末内（セキュアストレージ）</td></tr>
+              <tr><td>アプリデータ</td><td>システム情報、パスワード（AES-256-GCM暗号化）、変更履歴、ルール、ワークスペース</td><td>端末内</td></tr>
+              <tr><td>課金情報</td><td>プラン状態、有効期限などの購読状態</td><td>RevenueCat（課金管理サービス）</td></tr>
+              <tr><td>広告関連情報</td><td>広告ID（IDFA / GAID）、IPアドレス、デバイス情報等（Freeプランのみ）</td><td>Google AdMob</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="legal-section">
+          <h2>3. 第三者サービス</h2>
+          <p>本アプリは以下の第三者サービスを利用しています。各サービスのプライバシーポリシーも併せてご確認ください。</p>
+          <ul>
+            <li>RevenueCat（サブスクリプション管理）— <a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a></li>
+            <li>Google AdMob（広告配信、Freeプランのみ）— <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a></li>
+          </ul>
+        </section>
+
+        <section class="legal-section">
+          <h2>4. データのセキュリティ</h2>
+          <ul>
+            <li>パスワードデータはAES-256-GCMで暗号化して端末内に保存し、平文での保存は行いません。</li>
+            <li>暗号鍵は256bitランダム生成し、iOS Keychain / Android Keystoreに保管します。</li>
+            <li>PINはソルト付きSHA-256ハッシュで保存します。</li>
+            <li>エクスポートファイル（.passlog形式）はPBKDF2（600,000回反復）で鍵導出し、AES-256-GCMで暗号化します。</li>
+          </ul>
+        </section>
+
+        <section class="legal-section">
+          <h2>5. エクスポート・削除</h2>
+          <p>エクスポートファイルはユーザーが設定するパスワード（8文字以上）で暗号化されます。SHA-256チェックサムでデータ整合性も検証されます。デバイス固有の暗号鍵はファイルに含まれないため、安全に別端末への移行が可能です。</p>
+          <p>データ削除は、アプリ内の操作（個別削除・全削除）またはアプリのアンインストールで実施できます。</p>
+        </section>
+
+        <section class="legal-section">
+          <h2>6. データの保持と削除</h2>
+          <p>本アプリのデータは端末内に保存されており、アプリのアンインストールにより削除されます。ただし、端末のバックアップ機能（iCloud、Googleバックアップ等）を利用している場合、バックアップデータにアプリデータが含まれることがあります。完全な削除を希望される場合は、アンインストール前にアプリ内でデータを削除するか、端末のバックアップからも削除してください。</p>
+        </section>
+
+        <section class="legal-section">
+          <h2>7. ポリシー変更</h2>
+          <p>本ポリシーを変更する場合、重要な変更についてはアプリ内通知など適切な方法でお知らせします。</p>
+        </section>
+      </article>
+
+      <footer class="legal-footer">
+        <p>お問い合わせ: <a href="mailto:passlog.developer@gmail.com">passlog.developer@gmail.com</a></p>
+        <p>&copy; 2026 PassLog. All rights reserved.</p>
+      </footer>
+    </div>
+  </main>
+</body>
+</html>

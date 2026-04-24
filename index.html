@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/png" href="image/icon.png">
+    <link rel="apple-touch-icon" href="image/icon.png">
+
+    <!-- Smart App Banner (iOS Safari / Google Play) -->
+    <!-- TODO: ストアIDが確定したら更新 -->
+    <!-- <meta name="apple-itunes-app" content="app-id=XXXXXXXXX"> -->
+    <meta name="google-play-app" content="app-id=com.sikakou.passlog">
+
+    <!-- SEO -->
+    <title>PassLog - パスワード履歴管理アプリ｜変更履歴・ルール生成・適合チェック【基本無料】</title>
+    <meta name="description"
+        content="【基本無料】パスワードの変更履歴を端末内で記録・管理。ルールに沿ったパスワード自動生成・6項目の適合チェック・ワークスペース分類。完全オフライン・アカウント不要・AES-256-GCM暗号化。iOS/Android対応。">
+    <meta name="keywords"
+        content="PassLog, パスワード管理, パスワード履歴, パスワード生成, パスワードチェック, パスワード管理アプリ, 無料, セキュリティ, AES-256暗号化, ワークスペース, オフライン, 機種変更, バックアップ">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="PassLog">
+
+    <!-- hreflang -->
+    <!-- TODO: ドメインが確定したら更新 -->
+    <link rel="alternate" hreflang="ja" href="https://passlog.net/">
+    <link rel="alternate" hreflang="x-default" href="https://passlog.net/">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://passlog.net/">
+
+    <!-- OGP (Open Graph Protocol) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PassLog - パスワード履歴管理アプリ｜変更履歴・ルール生成・適合チェック【基本無料】">
+    <meta property="og:description"
+        content="【基本無料】パスワードの変更履歴を端末内で記録・管理。ルールに沿った自動生成・6項目の適合チェック。完全オフライン・アカウント不要。iOS/Android対応。">
+    <meta property="og:url" content="https://passlog.net/">
+    <meta property="og:site_name" content="PassLog">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:image" content="https://passlog.net/image/icon.png">
+    <meta property="og:image:alt" content="PassLog - パスワード履歴管理アプリ">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PassLog - パスワード履歴管理アプリ【基本無料】">
+    <meta name="twitter:description" content="【基本無料】パスワードの変更履歴を端末内で記録・管理。ルールベース生成・適合チェック。端末内保存・アカウント不要。iOS/Android対応。">
+    <meta name="twitter:image" content="https://passlog.net/image/icon.png">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0a1628">
+
+    <!-- Resource Hints -->
+    <link rel="preload" as="image" href="image/list.png" fetchpriority="high">
+
+    <!-- 構造化データ (JSON-LD) - SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "PassLog",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "iOS 16.0+, Android 13.0+",
+        "offers": [
+            {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "JPY",
+                "name": "Free",
+                "description": "基本無料プラン（システム10件・ルール3件・ワークスペース1つまで）",
+                "availability": "https://schema.org/InStock"
+            },
+            {
+                "@type": "Offer",
+                "price": "250",
+                "priceCurrency": "JPY",
+                "name": "Premium（月額）",
+                "description": "システム・ルール・ワークスペース無制限／広告非表示",
+                "availability": "https://schema.org/InStock",
+                "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": "250",
+                    "priceCurrency": "JPY",
+                    "billingDuration": "P1M"
+                }
+            },
+            {
+                "@type": "Offer",
+                "price": "2500",
+                "priceCurrency": "JPY",
+                "name": "Premium（年額）",
+                "description": "システム・ルール・ワークスペース無制限／広告非表示（年額でお得）",
+                "availability": "https://schema.org/InStock",
+                "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": "2500",
+                    "priceCurrency": "JPY",
+                    "billingDuration": "P1Y"
+                }
+            }
+        ],
+        "description": "パスワードの変更履歴を記録・管理。ルールに沿ったパスワード自動生成・6項目の適合チェック。ワークスペースで用途別に整理。すべて端末内に保存・アカウント登録不要。",
+        "featureList": [
+            "システムごとのパスワード管理（インクリメンタルサーチ・ワークスペースフィルタ）",
+            "パスワード変更履歴の自動記録（日時・変更理由プリセット）",
+            "ルールベースのパスワード自動生成（セクション構成・ベース文字列固定・連番カウンター）",
+            "6項目の適合チェック（文字数・英大文字・英小文字・数字・記号・過去パスワード重複）",
+            "ワークスペース（用途別のシステム分類）",
+            "ルール共有（1つのルールを複数システムで参照）",
+            "PIN・生体認証によるアプリロック",
+            "暗号化エクスポート・インポート（PBKDF2 600,000回反復 + AES-256-GCM）",
+            "インポート時のロールバック保護・プレビュー確認",
+            "Premium期限切れ後も既存データは継続利用可能",
+            "オフライン完全対応",
+            "日本語・英語対応"
+        ],
+        "inLanguage": ["ja", "en"],
+        "softwareVersion": "4.0.0",
+        "datePublished": "2026-04-23",
+        "screenshot": "https://passlog.net/image/list.png",
+        "author": {
+            "@type": "Organization",
+            "name": "PassLog"
+        }
+    }
+    </script>
+
+    <!-- 構造化データ (JSON-LD) - WebSite -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "PassLog",
+        "url": "https://passlog.net/",
+        "description": "パスワードの変更履歴を記録・管理するアプリ。ルールベース生成・適合チェック・端末内保存。ワークスペースで用途別に整理。",
+        "inLanguage": "ja"
+    }
+    </script>
+
+    <!-- 構造化データ (JSON-LD) - Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "PassLog",
+        "url": "https://passlog.net/",
+        "logo": "https://passlog.net/image/icon.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "passlog.developer@gmail.com",
+            "contactType": "customer support"
+        }
+    }
+    </script>
+
+    <!-- 構造化データ (JSON-LD) - FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "PassLogは無料で使えますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "はい、基本機能は無料でお使いいただけます。システム10件・ルール3件・ワークスペース1つまで無料で管理できます。Premiumプラン（月額250円 / 年額2,500円）にアップグレードすると、すべて無制限になり広告も非表示になります。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "パスワードデータはどこに保存されますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "すべて端末内にローカル保存されます。サーバーに送信されることは一切ありません。パスワードデータはAES-256-GCM暗号化で保護され、暗号鍵はiOS Keychain / Android Keystoreに安全に保管されます。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "データのセキュリティは大丈夫ですか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "パスワードデータはAES-256-GCM暗号化で端末内に保存されます。暗号鍵は256bitランダム生成、iOS Keychain / Android Keystoreに保管。PINはソルト付きSHA-256ハッシュで安全に保管されます。エクスポートファイルはPBKDF2（600,000回反復）で鍵導出しAES-256-GCMで暗号化。インターネットへの送信は一切行いません。アプリはPIN・生体認証（Face ID / 指紋認証）でロックでき、バックグラウンド復帰時にも自動ロックされます。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "アカウント登録は必要ですか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "基本機能にアカウント登録は不要です。ダウンロードしてすぐに使い始められます。Premiumプラン購入時のみ、Apple ID / Googleアカウントが必要です。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "機種変更時にデータを移行できますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "はい、エクスポート機能でPBKDF2鍵導出+AES-256-GCM暗号化したファイル（.passlog形式）を出力し、新しい端末でインポートできます。エクスポートファイルはパスワードで保護されます。インポートは完全置き換え方式で、プレビュー画面でデータ概要を確認後に実行。インポート失敗時は自動ロールバックでデータが保護されます。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "広告は表示されますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Freeプランではシステム一覧画面の下部にバナー広告が表示されます。iOSではApp Tracking Transparency（ATT）の許可状況に応じて、パーソナライズド広告または非パーソナライズド広告を配信します。Premiumプラン（月額250円 / 年額2,500円）にアップグレードすると、広告は完全に非表示になります。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "パスワード生成のルールはどんなものを設定できますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "英字・数字・記号の3セクション構成でパスワード長（4〜64文字）を設定できます。英大文字・英小文字・数字の必須指定、使用する記号セットの選択、ベース文字列の固定、数字セクションのランダム/連番カウンター切り替え、過去パスワード重複禁止などを設定可能です。1つのルールを複数のシステムで共有でき、ルール変更は参照元に即時反映されます。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "連番カウンターとは何ですか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "数字セクションで「連番」を選ぶと、パスワードを更新するたびに数字部分が自動でインクリメントされます。ベース文字列と組み合わせれば、何回目の更新かがパスワード自体から分かり、更新回数の把握や重複回避に役立ちます。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Premiumプランとは何ですか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "月額250円または年額2,500円のサブスクリプションです。システム数・ルール数・ワークスペース数が無制限になり、広告も非表示になります。App Store / Google Play経由で購入でき、いつでもキャンセルできます。「購入を復元」で既に購入済みのサブスクリプションも復元可能です。期限切れ後もFreeプランとして継続利用でき、既存データの閲覧・編集・コピー・削除は引き続き可能です。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "ワークスペースとは何ですか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "仕事用・プライベート用など、用途別にシステムを分類・整理できる機能です。初回起動時にデフォルトワークスペースが自動作成されます。ヘッダーからワンタップで切り替え可能。ワークスペース削除時、所属するシステムはデフォルトワークスペースに自動移動されます。Freeプランではデフォルトの1つ、Premiumプランでは無制限に作成できます。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "対応OSは？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "iOS 16以上、Android 13以上に対応しています。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "英語に対応していますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "はい、日本語・英語の2言語に対応しています。端末の言語設定に自動で連動します。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Premiumを解約したらデータはどうなりますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "解約後もFreeプランとして継続利用できます。既存のシステム・ルール・ワークスペースの閲覧・編集・コピー・削除は引き続き可能です。Freeティアの上限（システム10件・ルール3件・ワークスペース1つ）を超えている場合は、新規作成のみ制限されます。データを人質にすることはありません。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "エクスポートファイルのセキュリティは？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "エクスポートファイル（.passlog形式）は、PBKDF2（600,000回反復）で鍵導出し、AES-256-GCMで暗号化されます。ユーザーが設定したパスワード（8文字以上）で保護され、SHA-256チェックサムでデータ整合性も検証されます。デバイス固有の暗号鍵はファイルに含まれないため、安全に共有できます。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "検索機能はありますか？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "はい、システム名・ログインID・パスワードの3条件でインクリメンタルサーチ（入力に連動したリアルタイム検索）ができます。さらにワークスペースフィルタも統合されており、ヒット数バッジ付きで素早く目的のシステムを見つけられます。"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- 構造化データ (JSON-LD) - HowTo -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "PassLogでパスワードを管理する方法",
+        "description": "PassLogアプリでシステムのパスワードを安全に管理する手順",
+        "totalTime": "PT2M",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "システムを登録",
+                "text": "パスワードを使うシステム（社内メール、VPNなど）を登録。パスワードルール（文字種・桁数など）も設定できます。"
+            },
+            {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "パスワードを記録",
+                "text": "現在のパスワードを登録。変更するたびに日時・理由が自動で履歴に保存されます。ルールに基づく自動生成や適合チェックも可能です。"
+            },
+            {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "必要なときにすぐ確認",
+                "text": "マスク表示で安全に確認、ワンタップでコピー。過去の履歴もいつでも遡れます。"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JavaScript無効時のフォールバック -->
+    <noscript>
+        <style>
+            .animate-on-scroll {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            .hero-phone-img {
+                opacity: 1 !important;
+            }
+
+            .faq-answer {
+                max-height: none !important;
+            }
+        </style>
+    </noscript>
+</head>
+
+<body>
+    <a href="#main" class="skip-link">メインコンテンツへスキップ</a>
+
+    <!-- Navigation -->
+    <header class="site-header" id="site-header">
+        <nav class="site-nav" aria-label="メインナビゲーション">
+            <div class="nav-container">
+                <a href="/" class="nav-logo" aria-label="PassLog ホーム">
+                    <img src="image/icon.png" alt="" width="32" height="32" aria-hidden="true">
+                    PassLog
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#pillars">特長</a></li>
+                    <li><a href="#how-it-works">使い方</a></li>
+                    <li><a href="#features">機能</a></li>
+                    <li><a href="#plans">プラン</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+                <!-- リリース前のためダウンロードボタンは非表示（リリース時に復元）
+                <div class="nav-cta-wrap">
+                    <a href="#download" class="nav-cta">ダウンロード</a>
+                </div>
+                -->
+
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <!-- ========================
+             Hero Section
+             ======================== -->
+        <section class="hero" aria-label="PassLog紹介">
+            <div class="hero-grid-overlay" aria-hidden="true"></div>
+            <div class="hero-content fade-in">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot" aria-hidden="true"></span>
+                        基本無料 ・ アカウント不要 ・ 端末内保存 ・ オフライン対応
+                    </div>
+                    <h1 class="hero-title">
+                        パスワードの<br>
+                        <span class="hero-title-gradient">変更履歴</span>を、<br>
+                        残せるアプリ。
+                    </h1>
+                    <p class="hero-subtitle">定期変更のたびに忘れる、ルールが複雑で作れない、クラウドには預けたくない。PassLogなら、すべて端末内で完結。</p>
+                    <!-- リリース前のためストアバッジは非表示（リリース時に復元）
+                    <div class="hero-actions">
+                        <div class="store-badges">
+                            <a href="#" class="store-badge" target="_blank" rel="noopener" aria-label="App Storeでダウンロード">
+                                <img src="image/ios-badge.svg" alt="App Storeからダウンロード" height="52">
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=com.sikakou.passlog" class="store-badge" target="_blank" rel="noopener" aria-label="Google Playで手に入れよう">
+                                <img src="image/android-badge.svg" alt="Google Playで手に入れよう" height="52">
+                            </a>
+                        </div>
+                    </div>
+                    -->
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">AES-256</div>
+                            <div class="hero-stat-label">GCM暗号化</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">6項目</div>
+                            <div class="hero-stat-label">適合チェック</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">100%</div>
+                            <div class="hero-stat-label">端末内保存</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">オフライン</div>
+                            <div class="hero-stat-label">完全対応</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="hero-phone-glow"></div>
+                    <div class="hero-phone-carousel">
+                        <img src="image/list.png" alt="PassLog システム一覧画面" class="hero-phone-img active" width="280"
+                            height="607" fetchpriority="high">
+                        <img src="image/detail.png" alt="PassLog システム詳細画面" class="hero-phone-img" width="280"
+                            height="607" loading="lazy" decoding="async">
+                        <img src="image/password.png" alt="PassLog パスワード管理画面" class="hero-phone-img" width="280"
+                            height="607" loading="lazy" decoding="async">
+                        <img src="image/history.png" alt="PassLog パスワード履歴画面" class="hero-phone-img" width="280"
+                            height="607" loading="lazy" decoding="async">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             Pillars Section (4本柱 / 新設)
+             ======================== -->
+        <section id="pillars" class="pillars-section" aria-label="PassLogの4つの約束">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label" lang="en">OUR PROMISE</span>
+                    <h2 class="section-title">PassLogの4つの約束</h2>
+                    <p class="section-desc">パスワード管理で本当に大切なことを、たった4つの軸に集約しました。</p>
+                </div>
+                <div class="pillars-grid">
+                    <div class="pillar-card animate-on-scroll">
+                        <span class="pillar-num">01</span>
+                        <div class="pillar-icon" aria-hidden="true">&#x1F512;</div>
+                        <h3>完全オフライン・<br>端末内完結</h3>
+                        <p>データは端末内にのみ保存。サーバー送信もアカウント登録も不要。AES-256-GCMで暗号化、暗号鍵はOSのセキュアストレージに保管。</p>
+                    </div>
+                    <div class="pillar-card animate-on-scroll">
+                        <span class="pillar-num">02</span>
+                        <div class="pillar-icon" aria-hidden="true">&#x2699;&#xFE0F;</div>
+                        <h3>ルール生成＋<br>適合チェック</h3>
+                        <p>英字・数字・記号のセクション構成でルールを定義し、ワンタップで自動生成。6項目の適合チェックでどの条件を満たしていないか即座に判定。</p>
+                    </div>
+                    <div class="pillar-card animate-on-scroll">
+                        <span class="pillar-num">03</span>
+                        <div class="pillar-icon" aria-hidden="true">&#x1F4DC;</div>
+                        <h3>変更履歴を<br>自動で記録</h3>
+                        <p>パスワード更新時に変更前パスワード・日時・変更理由を自動保存。「いつ」「なぜ」変えたかをいつでも振り返れる、PassLogだけの特長。</p>
+                    </div>
+                    <div class="pillar-card animate-on-scroll">
+                        <span class="pillar-num">04</span>
+                        <div class="pillar-icon" aria-hidden="true">&#x2728;</div>
+                        <h3>シンプルな<br>フリーミアム</h3>
+                        <p>基本機能は無料で即利用可能。Premiumプラン（月額250円 / 年額2,500円）で上限を解除・広告非表示。期限切れ後も既存データは継続利用可能。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             Scenes Section
+             ======================== -->
+        <section id="scenes" class="section section-alt" aria-label="利用シーン">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label" lang="en">PROBLEMS</span>
+                    <h2 class="section-title">こんな経験、ありませんか？</h2>
+                    <p class="section-desc">パスワード管理で誰もが感じるストレス。PassLogがまるごと解決します。</p>
+                </div>
+                <div class="scenes-grid">
+                    <div class="scene-card animate-on-scroll">
+                        <span class="scene-emoji" aria-hidden="true">&#x1F914;</span>
+                        <h3>「前のパスワード何だっけ？」</h3>
+                        <p>定期変更のたびに記憶を探る。PassLogなら、いつ・なぜ変更したか履歴で全て追える。前回のパスワードもワンタップで確認。</p>
+                        <span class="scene-arrow" aria-hidden="true">&#x2192; 変更履歴で解決</span>
+                    </div>
+                    <div class="scene-card animate-on-scroll">
+                        <span class="scene-emoji" aria-hidden="true">&#x1F4DD;</span>
+                        <h3>「大文字と記号を含めて…」<br>条件が複雑すぎる</h3>
+                        <p>システムごとに違うルール、手動で考えるのは限界。ルールを一度登録すれば、ワンタップで自動生成。1つのルールを複数システムで共有可能。</p>
+                        <span class="scene-arrow" aria-hidden="true">&#x2192; ルール自動生成で解決</span>
+                    </div>
+                    <div class="scene-card animate-on-scroll">
+                        <span class="scene-emoji" aria-hidden="true">&#x274C;</span>
+                        <h3>「このパスワード、<br>ルールに合ってる？」</h3>
+                        <p>変更したのにエラーで弾かれる。6項目の適合チェックで、どの条件を満たしていないか一目で分かる。</p>
+                        <span class="scene-arrow" aria-hidden="true">&#x2192; 適合チェックで解決</span>
+                    </div>
+                    <div class="scene-card animate-on-scroll">
+                        <span class="scene-emoji" aria-hidden="true">&#x1F512;</span>
+                        <h3>「クラウドに預けるのは不安…」</h3>
+                        <p>PassLogはパスワードデータを外部に送信しない。すべて端末内に保存、AES-256-GCM暗号化。アカウント登録も不要。</p>
+                        <span class="scene-arrow" aria-hidden="true">&#x2192; 完全ローカルで解決</span>
+                    </div>
+                    <div class="scene-card animate-on-scroll">
+                        <span class="scene-emoji" aria-hidden="true">&#x1F4F1;</span>
+                        <h3>「機種変更したら<br>データが消える？」</h3>
+                        <p>PBKDF2鍵導出+AES-256-GCM暗号化でエクスポート。新端末にインポートするだけで完全復元。失敗時は自動ロールバックでデータを保護。</p>
+                        <span class="scene-arrow" aria-hidden="true">&#x2192; エクスポート・インポートで解決</span>
+                    </div>
+                    <div class="scene-card animate-on-scroll">
+                        <span class="scene-emoji" aria-hidden="true">&#x1F4C2;</span>
+                        <h3>「仕事とプライベートの<br>パスワードが混ざる…」</h3>
+                        <p>ワークスペース機能で用途別に分類。ヘッダーからワンタップで切り替えて、必要なシステムだけ表示。</p>
+                        <span class="scene-arrow" aria-hidden="true">&#x2192; ワークスペースで解決</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             How It Works Section
+             ======================== -->
+        <section id="how-it-works" class="section" aria-label="使い方">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label" lang="en">HOW IT WORKS</span>
+                    <h2 class="section-title">始め方はかんたん、3ステップ</h2>
+                    <p class="section-desc">ダウンロードしたらすぐに使い始められます。アカウント登録は不要です。</p>
+                </div>
+                <div class="steps-container">
+                    <div class="step-item animate-on-scroll">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h3>システムを登録</h3>
+                            <p>パスワードを使うシステム（社内メール、VPNなど）を登録。パスワードルールも設定できます。</p>
+                        </div>
+                    </div>
+                    <span class="step-connector" aria-hidden="true">&#x2192;</span>
+                    <div class="step-item animate-on-scroll">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h3>パスワードを記録</h3>
+                            <p>現在のパスワードを登録。変更するたびに日時・理由が自動で履歴に保存されます。</p>
+                        </div>
+                    </div>
+                    <span class="step-connector" aria-hidden="true">&#x2192;</span>
+                    <div class="step-item animate-on-scroll">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h3>必要なときにすぐ確認</h3>
+                            <p>マスク表示で安全に確認、ワンタップでコピー。過去の履歴もいつでも遡れます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             Features Section
+             ======================== -->
+        <section id="features" class="section section-alt" aria-label="主な機能">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label" lang="en">FEATURES</span>
+                    <h2 class="section-title">パスワードのライフサイクルを<br>まるごとサポート</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon-wrap" aria-hidden="true">&#x1F5C2;&#xFE0F;</div>
+                        <h3>システム一覧管理</h3>
+                        <p>パスワードを使うシステムをまとめて管理。名前・ログインID・メモ・アイコンで整理。インクリメンタルサーチとワークスペースフィルタですぐに見つかる。</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon-wrap" aria-hidden="true">&#x1F4DC;</div>
+                        <h3>変更履歴の自動記録</h3>
+                        <p>パスワード更新時に変更前パスワードを自動で履歴に保存。日時・変更理由（定期変更・セキュリティ対応・初期設定・その他から選択可）とともに時系列で確認可能。</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon-wrap" aria-hidden="true">&#x2699;&#xFE0F;</div>
+                        <h3>ルールベースの自動生成</h3>
+                        <p>英字・数字・記号のセクション構成でルールを定義。文字数は4〜64文字の範囲で指定。ワンタップでルールに合ったパスワードを生成。</p>
+                    </div>
+                    <div class="feature-card feature-new animate-on-scroll">
+                        <span class="feature-new-badge" lang="en">NEW</span>
+                        <div class="feature-icon-wrap" aria-hidden="true">&#x1F522;</div>
+                        <h3>連番カウンター</h3>
+                        <p>数字セクションで連番を選ぶと、更新のたびに番号が自動インクリメント。何回目の更新かがパスワード自体から分かる独自機能。</p>
+                    </div>
+                    <div class="feature-card feature-new animate-on-scroll">
+                        <span class="feature-new-badge" lang="en">NEW</span>
+                        <div class="feature-icon-wrap" aria-hidden="true">&#x1F4CC;</div>
+                        <h3>ベース文字列固定</h3>
+                        <p>各セクションで固定値を指定可能。プレフィックスや覚えやすい合言葉を組み込んだうえで、残りをルールに沿って自動生成。</p>
+                    </div>
+                    <div class="feature-card feature-new animate-on-scroll">
+                        <span class="feature-new-badge" lang="en">NEW</span>
+                        <div class="feature-icon-wrap" aria-hidden="true">&#x1F6AB;</div>
+                        <h3>過去パスワード重複禁止</h3>
+                        <p>ルール設定で「過去パスワードと同じを禁止」を有効化可能。過去の履歴と照合し、実質的な使い回しを防止。</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon-wrap" aria-hidden="true">&#x2705;</div>
+                        <h3>6項目の適合チェック</h3>
+                        <p>文字数・英大文字・英小文字・数字・記号・過去パスワード重複の6項目でルール適合を即座に判定。不足条件を一目で確認。</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon-wrap" aria-hidden="true">&#x1F4C2;</div>
+                        <h3>ワークスペース</h3>
+                        <p>仕事用・プライベート用など用途別にシステムを分類。ヘッダーからワンタップで切り替え。Free 1つ、Premiumで無制限に追加可能。</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon-wrap" aria-hidden="true">&#x1F511;</div>
+                        <h3>安全な閲覧とコピー</h3>
+                        <p>マスク表示でのぞき見を防止。ワンタップでクリップボードにコピー。PIN・生体認証でアプリ自体もロック。</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon-wrap" aria-hidden="true">&#x1F4E6;</div>
+                        <h3>暗号化エクスポート・インポート</h3>
+                        <p>全データをPBKDF2鍵導出+AES-256-GCM暗号化ファイル（.passlog形式）でバックアップ。インポート前にプレビュー確認、失敗時は自動ロールバックでデータを保護。</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon-wrap" aria-hidden="true">&#x1F30D;</div>
+                        <h3>日本語・英語対応</h3>
+                        <p>端末の言語設定に自動連動。日本語・英語の2言語に対応しています。ダークモードも端末設定で自動切替。</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll">
+                        <div class="feature-icon-wrap" aria-hidden="true">&#x1F6E1;&#xFE0F;</div>
+                        <h3>解約後もデータを保護</h3>
+                        <p>Premiumの期限が切れても、既存データの閲覧・編集・コピー・削除は継続可能。新規作成のみFree上限で制限。データを人質にしません。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             Security Section
+             ======================== -->
+        <section id="security" class="security-section" aria-label="セキュリティと信頼性">
+            <div class="container">
+                <div class="security-header">
+                    <span class="section-label" lang="en" style="color: var(--accent-light);">SECURITY</span>
+                    <h2 class="security-title">あなたのパスワードは、<br>あなたの端末だけに。</h2>
+                    <p class="security-desc">パスワードデータは外部サーバーに送信しません。AES-256-GCM暗号化で保護します。</p>
+                </div>
+            </div>
+            <div class="security-grid">
+                <div class="security-card animate-on-scroll">
+                    <div class="security-icon" aria-hidden="true">&#x1F4F5;</div>
+                    <h3>端末内保存</h3>
+                    <p>パスワードデータはサーバーに送信せず、端末内のみに保存。基本機能はオフラインでも動作します。</p>
+                </div>
+                <div class="security-card animate-on-scroll">
+                    <div class="security-icon" aria-hidden="true">&#x1F6E1;&#xFE0F;</div>
+                    <h3>AES-256-GCM暗号化</h3>
+                    <p>広く信頼されている暗号化方式でデータを保護。暗号鍵は256bitランダム生成、iOS Keychain / Android Keystoreに安全に保管。</p>
+                </div>
+                <div class="security-card animate-on-scroll">
+                    <div class="security-icon" aria-hidden="true">&#x1F510;</div>
+                    <h3>PIN・生体認証ロック</h3>
+                    <p>4桁PINとFace ID / 指紋認証でアプリをロック。PINはソルト付きSHA-256ハッシュで保管。バックグラウンド復帰時にも自動ロック。</p>
+                </div>
+                <div class="security-card animate-on-scroll">
+                    <div class="security-icon" aria-hidden="true">&#x1F464;</div>
+                    <h3>アカウント登録不要</h3>
+                    <p>個人情報の登録不要。ダウンロードしてすぐに使える。あなたのデータに触れるのは、あなただけ。</p>
+                </div>
+                <div class="security-card animate-on-scroll">
+                    <div class="security-icon" aria-hidden="true">&#x1F4E6;</div>
+                    <h3>暗号化バックアップ</h3>
+                    <p>エクスポートファイルはPBKDF2（600,000回反復）で鍵導出し、AES-256-GCMで暗号化。SHA-256チェックサムでデータ整合性も検証。</p>
+                </div>
+            </div>
+            <p class="security-note">対応OS: iOS 16.0+ / Android 13.0+</p>
+        </section>
+
+        <!-- ========================
+             Comparison Section
+             ======================== -->
+        <section id="comparison" class="comparison-section section-alt" aria-label="他サービスとの比較">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label" lang="en">COMPARISON</span>
+                    <h2 class="section-title">他のパスワード管理との違い</h2>
+                    <p class="section-desc">PassLogだけの「変更履歴」管理。</p>
+                </div>
+                <div class="comparison-table-wrap animate-on-scroll">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>機能</th>
+                                <th class="highlight">PassLog</th>
+                                <th>一般的なパスワード管理</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>パスワード保存</td>
+                                <td class="highlight"><span class="check-yes">&#x2713;</span></td>
+                                <td><span class="check-yes">&#x2713;</span></td>
+                            </tr>
+                            <tr>
+                                <td>変更履歴の記録</td>
+                                <td class="highlight"><span class="check-yes">&#x2713;</span></td>
+                                <td><span class="check-no">&#x2212;</span></td>
+                            </tr>
+                            <tr>
+                                <td>変更理由の記録</td>
+                                <td class="highlight"><span class="check-yes">&#x2713;</span></td>
+                                <td><span class="check-no">&#x2212;</span></td>
+                            </tr>
+                            <tr>
+                                <td>ルールベースの自動生成</td>
+                                <td class="highlight"><span class="check-yes">&#x2713;</span></td>
+                                <td><span class="check-partial">一部</span></td>
+                            </tr>
+                            <tr>
+                                <td>ベース文字列固定・連番カウンター</td>
+                                <td class="highlight"><span class="check-yes">&#x2713;</span></td>
+                                <td><span class="check-no">&#x2212;</span></td>
+                            </tr>
+                            <tr>
+                                <td>6項目の適合チェック</td>
+                                <td class="highlight"><span class="check-yes">&#x2713;</span></td>
+                                <td><span class="check-no">&#x2212;</span></td>
+                            </tr>
+                            <tr>
+                                <td>完全ローカル保存</td>
+                                <td class="highlight"><span class="check-yes">&#x2713;</span></td>
+                                <td><span class="check-no">&#x2212;</span></td>
+                            </tr>
+                            <tr>
+                                <td>オフライン完全対応</td>
+                                <td class="highlight"><span class="check-yes">&#x2713;</span></td>
+                                <td><span class="check-partial">クラウド依存</span></td>
+                            </tr>
+                            <tr>
+                                <td>アカウント登録不要</td>
+                                <td class="highlight"><span class="check-yes">&#x2713;</span></td>
+                                <td><span class="check-no">&#x2212;</span></td>
+                            </tr>
+                            <tr>
+                                <td>暗号化バックアップ・復元</td>
+                                <td class="highlight"><span class="check-yes">&#x2713;</span></td>
+                                <td><span class="check-partial">クラウド依存</span></td>
+                            </tr>
+                            <tr>
+                                <td>インポート時のロールバック保護</td>
+                                <td class="highlight"><span class="check-yes">&#x2713;</span></td>
+                                <td><span class="check-no">&#x2212;</span></td>
+                            </tr>
+                            <tr>
+                                <td>ワークスペース分類</td>
+                                <td class="highlight"><span class="check-yes">&#x2713;</span></td>
+                                <td><span class="check-partial">一部</span></td>
+                            </tr>
+                            <tr>
+                                <td>解約後もデータ閲覧可能</td>
+                                <td class="highlight"><span class="check-yes">&#x2713;</span></td>
+                                <td><span class="check-partial">一部</span></td>
+                            </tr>
+                            <tr>
+                                <td>広告なし（Premium）</td>
+                                <td class="highlight"><span class="check-yes">&#x2713;</span></td>
+                                <td><span class="check-partial">有料のみ</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             Plans Section
+             ======================== -->
+        <section id="plans" class="section" aria-label="プラン比較">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label" lang="en">PLANS</span>
+                    <h2 class="section-title">料金プラン</h2>
+                    <p class="section-desc">基本機能は無料。もっと使いたい方にはPremiumプラン。</p>
+                </div>
+                <div class="plans-grid">
+                    <div class="plan-card animate-on-scroll">
+                        <div class="plan-name">Free</div>
+                        <div class="plan-price">無料</div>
+                        <ul class="plan-features">
+                            <li><span class="plan-check">&#x2713;</span> システム管理（最大10件）</li>
+                            <li><span class="plan-check">&#x2713;</span> パスワード管理・履歴</li>
+                            <li><span class="plan-check">&#x2713;</span> ルール設定（最大3件）</li>
+                            <li><span class="plan-check">&#x2713;</span> ワークスペース（1つ）</li>
+                            <li><span class="plan-check">&#x2713;</span> パスワード生成・適合チェック</li>
+                            <li><span class="plan-check">&#x2713;</span> PIN・生体認証ロック</li>
+                            <li><span class="plan-check">&#x2713;</span> エクスポート・インポート</li>
+                            <li><span class="plan-check">&#x2713;</span> バナー広告あり</li>
+                        </ul>
+                    </div>
+                    <div class="plan-card plan-premium animate-on-scroll">
+                        <div class="plan-badge">おすすめ</div>
+                        <div class="plan-name">Premium</div>
+                        <div class="plan-price">
+                            月額250円 / 年額2,500円<small>（税込）</small><br>
+                            <span class="plan-price-highlight">年額プランなら2ヶ月分おトク</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li><span class="plan-check">&#x2713;</span> <strong>システム管理（無制限）</strong></li>
+                            <li><span class="plan-check">&#x2713;</span> パスワード管理・履歴</li>
+                            <li><span class="plan-check">&#x2713;</span> <strong>ルール設定（無制限）</strong></li>
+                            <li><span class="plan-check">&#x2713;</span> <strong>ワークスペース（無制限）</strong></li>
+                            <li><span class="plan-check">&#x2713;</span> パスワード生成・適合チェック</li>
+                            <li><span class="plan-check">&#x2713;</span> PIN・生体認証ロック</li>
+                            <li><span class="plan-check">&#x2713;</span> エクスポート・インポート</li>
+                            <li><span class="plan-check">&#x2713;</span> <strong>広告なし</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="plans-notice animate-on-scroll">
+                    <span class="plans-notice-icon" aria-hidden="true">&#x1F6E1;&#xFE0F;</span>
+                    <div class="plans-notice-body">
+                        <strong>Premium期限切れ後も、既存データは全機能で継続利用可能。</strong>
+                        閲覧・編集・コピー・削除はすべて引き続き可能で、Free上限（システム10件・ルール3件・ワークスペース1つ）を超える場合は新規作成のみが制限されます。購入の復元もApp Store /
+                        Google Playから行えます。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             FAQ Section
+             ======================== -->
+        <section id="faq" class="section section-alt" aria-label="よくある質問">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label" lang="en">FAQ</span>
+                    <h2 class="section-title">よくある質問</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                            <div class="faq-question-text">
+                                <span class="faq-q-mark">Q</span>
+                                <span>PassLogは無料で使えますか？</span>
+                            </div>
+                            <span class="faq-chevron" aria-hidden="true">&#x25BC;</span>
+                        </div>
+                        <div class="faq-answer" aria-hidden="true">
+                            <div class="faq-answer-inner">
+                                はい、基本機能は無料でお使いいただけます。システム10件・ルール3件・ワークスペース1つまで無料で管理できます。Premiumプラン（月額250円 /
+                                年額2,500円）にアップグレードすると、すべて無制限になり広告も非表示になります。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                            <div class="faq-question-text">
+                                <span class="faq-q-mark">Q</span>
+                                <span>パスワードデータはどこに保存されますか？</span>
+                            </div>
+                            <span class="faq-chevron" aria-hidden="true">&#x25BC;</span>
+                        </div>
+                        <div class="faq-answer" aria-hidden="true">
+                            <div class="faq-answer-inner">
+                                すべて端末内にローカル保存されます。サーバーに送信されることは一切ありません。パスワードデータはAES-256-GCM暗号化で保護され、暗号鍵はiOS Keychain /
+                                Android Keystoreに安全に保管されます。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                            <div class="faq-question-text">
+                                <span class="faq-q-mark">Q</span>
+                                <span>データのセキュリティは大丈夫ですか？</span>
+                            </div>
+                            <span class="faq-chevron" aria-hidden="true">&#x25BC;</span>
+                        </div>
+                        <div class="faq-answer" aria-hidden="true">
+                            <div class="faq-answer-inner">
+                                パスワードデータはAES-256-GCM暗号化で端末内に保存されます。暗号鍵は256bitランダム生成、iOS Keychain / Android
+                                Keystoreに保管。PINはソルト付きSHA-256ハッシュで安全に保管されます。エクスポートファイルはPBKDF2（600,000回反復）で鍵導出しAES-256-GCMで暗号化。インターネットへの送信は一切行いません。アプリはPIN・生体認証（Face
+                                ID / 指紋認証）でロックでき、バックグラウンド復帰時にも自動ロックされます。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                            <div class="faq-question-text">
+                                <span class="faq-q-mark">Q</span>
+                                <span>アカウント登録は必要ですか？</span>
+                            </div>
+                            <span class="faq-chevron" aria-hidden="true">&#x25BC;</span>
+                        </div>
+                        <div class="faq-answer" aria-hidden="true">
+                            <div class="faq-answer-inner">
+                                基本機能にアカウント登録は不要です。ダウンロードしてすぐに使い始められます。Premiumプラン購入時のみ、Apple ID / Googleアカウントが必要です。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                            <div class="faq-question-text">
+                                <span class="faq-q-mark">Q</span>
+                                <span>機種変更時にデータを移行できますか？</span>
+                            </div>
+                            <span class="faq-chevron" aria-hidden="true">&#x25BC;</span>
+                        </div>
+                        <div class="faq-answer" aria-hidden="true">
+                            <div class="faq-answer-inner">
+                                はい、エクスポート機能でPBKDF2鍵導出+AES-256-GCM暗号化したファイル（.passlog形式）を出力し、新しい端末でインポートできます。エクスポートファイルはパスワードで保護されます。インポートは完全置き換え方式で、プレビュー画面でデータ概要（システム数・履歴数・ルール数）を確認後に実行。インポート失敗時は自動ロールバックでデータが保護されます。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                            <div class="faq-question-text">
+                                <span class="faq-q-mark">Q</span>
+                                <span>広告は表示されますか？</span>
+                            </div>
+                            <span class="faq-chevron" aria-hidden="true">&#x25BC;</span>
+                        </div>
+                        <div class="faq-answer" aria-hidden="true">
+                            <div class="faq-answer-inner">
+                                Freeプランではシステム一覧画面の下部にバナー広告が表示されます。iOSではApp Tracking
+                                Transparency（ATT）の許可状況に応じて、パーソナライズド広告または非パーソナライズド広告を配信します。Premiumプラン（月額250円 /
+                                年額2,500円）にアップグレードすると、広告は完全に非表示になります。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                            <div class="faq-question-text">
+                                <span class="faq-q-mark">Q</span>
+                                <span>パスワード生成のルールはどんなものを設定できますか？</span>
+                            </div>
+                            <span class="faq-chevron" aria-hidden="true">&#x25BC;</span>
+                        </div>
+                        <div class="faq-answer" aria-hidden="true">
+                            <div class="faq-answer-inner">
+                                英字・数字・記号の3セクション構成でパスワード長（4〜64文字）を設定できます。英大文字・英小文字・数字の必須指定、使用する記号セットの選択、ベース文字列の固定、数字セクションのランダム/連番カウンター切り替え、過去パスワード重複禁止などを設定可能です。1つのルールを複数のシステムで共有でき、ルール変更は参照元に即時反映されます。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                            <div class="faq-question-text">
+                                <span class="faq-q-mark">Q</span>
+                                <span>連番カウンターとは何ですか？</span>
+                            </div>
+                            <span class="faq-chevron" aria-hidden="true">&#x25BC;</span>
+                        </div>
+                        <div class="faq-answer" aria-hidden="true">
+                            <div class="faq-answer-inner">
+                                数字セクションで「連番」を選ぶと、パスワードを更新するたびに数字部分が自動でインクリメントされます。ベース文字列と組み合わせれば、何回目の更新かがパスワード自体から分かり、更新回数の把握や実質的な重複回避に役立ちます。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                            <div class="faq-question-text">
+                                <span class="faq-q-mark">Q</span>
+                                <span>ワークスペースとは何ですか？</span>
+                            </div>
+                            <span class="faq-chevron" aria-hidden="true">&#x25BC;</span>
+                        </div>
+                        <div class="faq-answer" aria-hidden="true">
+                            <div class="faq-answer-inner">
+                                仕事用・プライベート用など、用途別にシステムを分類・整理できる機能です。初回起動時にデフォルトワークスペースが自動作成されます。ヘッダーからワンタップで切り替え可能。ワークスペース削除時、所属するシステムはデフォルトワークスペースに自動移動されます。Freeプランではデフォルトの1つ、Premiumプランでは無制限に作成できます。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                            <div class="faq-question-text">
+                                <span class="faq-q-mark">Q</span>
+                                <span>Premiumプランとは何ですか？</span>
+                            </div>
+                            <span class="faq-chevron" aria-hidden="true">&#x25BC;</span>
+                        </div>
+                        <div class="faq-answer" aria-hidden="true">
+                            <div class="faq-answer-inner">
+                                月額250円または年額2,500円のサブスクリプションです。システム数・ルール数・ワークスペース数が無制限になり、広告も非表示になります。App Store / Google
+                                Play経由で購入でき、いつでもキャンセルできます。「購入を復元」で既に購入済みのサブスクリプションも復元可能です。期限切れ後もFreeプランとして継続利用でき、既存データの閲覧・編集・コピー・削除は引き続き可能です。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                            <div class="faq-question-text">
+                                <span class="faq-q-mark">Q</span>
+                                <span>対応OSは？</span>
+                            </div>
+                            <span class="faq-chevron" aria-hidden="true">&#x25BC;</span>
+                        </div>
+                        <div class="faq-answer" aria-hidden="true">
+                            <div class="faq-answer-inner">
+                                iOS 16以上、Android 13以上に対応しています。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                            <div class="faq-question-text">
+                                <span class="faq-q-mark">Q</span>
+                                <span>英語に対応していますか？</span>
+                            </div>
+                            <span class="faq-chevron" aria-hidden="true">&#x25BC;</span>
+                        </div>
+                        <div class="faq-answer" aria-hidden="true">
+                            <div class="faq-answer-inner">
+                                はい、日本語・英語の2言語に対応しています。端末の言語設定に自動で連動します。ダークモードも端末設定で自動切替されます。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                            <div class="faq-question-text">
+                                <span class="faq-q-mark">Q</span>
+                                <span>Premiumを解約したらデータはどうなりますか？</span>
+                            </div>
+                            <span class="faq-chevron" aria-hidden="true">&#x25BC;</span>
+                        </div>
+                        <div class="faq-answer" aria-hidden="true">
+                            <div class="faq-answer-inner">
+                                解約後もFreeプランとして継続利用できます。既存のシステム・ルール・ワークスペースの閲覧・編集・コピー・削除は引き続き可能です。Freeティアの上限（システム10件・ルール3件・ワークスペース1つ）を超えている場合は、新規作成のみ制限されます。データを人質にすることはありません。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                            <div class="faq-question-text">
+                                <span class="faq-q-mark">Q</span>
+                                <span>エクスポートファイルのセキュリティは？</span>
+                            </div>
+                            <span class="faq-chevron" aria-hidden="true">&#x25BC;</span>
+                        </div>
+                        <div class="faq-answer" aria-hidden="true">
+                            <div class="faq-answer-inner">
+                                エクスポートファイル（.passlog形式）は、PBKDF2（600,000回反復）で鍵導出し、AES-256-GCMで暗号化されます。ユーザーが設定したパスワード（8文字以上）で保護され、SHA-256チェックサムでデータ整合性も検証されます。デバイス固有の暗号鍵はファイルに含まれないため、安全に共有できます。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item animate-on-scroll">
+                        <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+                            <div class="faq-question-text">
+                                <span class="faq-q-mark">Q</span>
+                                <span>検索機能はありますか？</span>
+                            </div>
+                            <span class="faq-chevron" aria-hidden="true">&#x25BC;</span>
+                        </div>
+                        <div class="faq-answer" aria-hidden="true">
+                            <div class="faq-answer-inner">
+                                はい、システム名・ログインID・パスワードの3条件でインクリメンタルサーチ（入力に連動したリアルタイム検索）ができます。さらにワークスペースフィルタも統合されており、ヒット数バッジ付きで素早く目的のシステムを見つけられます。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================
+             CTA Section
+             ======================== -->
+        <section id="download" class="cta-section" aria-label="ダウンロード">
+            <div class="cta-content">
+                <h2 class="cta-title">パスワード管理を、<br>今日から変えよう。</h2>
+                <p class="cta-desc">基本無料・アカウント登録不要。<br>ダウンロードして、すぐに使い始められます。</p>
+                <!-- リリース前のためストアバッジは非表示（リリース時に復元）
+                <div class="cta-buttons">
+                    <a href="#" class="store-badge" target="_blank" rel="noopener" aria-label="App Storeでダウンロード">
+                        <img src="image/ios-badge.svg" alt="App Storeからダウンロード" height="56" loading="lazy">
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.sikakou.passlog" class="store-badge"
+                        target="_blank" rel="noopener" aria-label="Google Playで手に入れよう">
+                        <img src="image/android-badge.svg" alt="Google Playで手に入れよう" height="56" loading="lazy">
+                    </a>
+                </div>
+                -->
+                <div class="cta-features">
+                    <span class="cta-feature"><span class="cta-feature-icon" aria-hidden="true">&#x1F512;</span>
+                        完全ローカル保存</span>
+                    <span class="cta-feature"><span class="cta-feature-icon" aria-hidden="true">&#x1F464;</span>
+                        アカウント不要</span>
+                    <span class="cta-feature"><span class="cta-feature-icon" aria-hidden="true">&#x2728;</span>
+                        基本無料</span>
+                    <span class="cta-feature"><span class="cta-feature-icon" aria-hidden="true">&#x1F4DC;</span>
+                        変更履歴</span>
+                    <span class="cta-feature"><span class="cta-feature-icon" aria-hidden="true">&#x1F4F4;</span>
+                        オフライン対応</span>
+                    <span class="cta-feature"><span class="cta-feature-icon" aria-hidden="true">&#x1F310;</span>
+                        日本語・英語対応</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================
+         Footer
+         ======================== -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="image/icon.png" alt="" width="24" height="24" aria-hidden="true">
+                PassLog
+            </div>
+            <ul class="footer-links">
+                <li><a href="policy.html">プライバシーポリシー</a></li>
+                <li><a href="terms.html">利用規約</a></li>
+            </ul>
+            <div class="footer-contact">お問い合わせ: <a
+                    href="mailto:passlog.developer@gmail.com">passlog.developer@gmail.com</a></div>
+            <div class="footer-copy">&copy; 2026 PassLog. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        // ナビゲーションのスクロール時背景変更
+        (function () {
+            var header = document.getElementById('site-header');
+            if (!header) return;
+            var scrolled = false;
+            window.addEventListener('scroll', function () {
+                var shouldBeScrolled = window.scrollY > 40;
+                if (shouldBeScrolled !== scrolled) {
+                    scrolled = shouldBeScrolled;
+                    header.classList.toggle('scrolled', scrolled);
+                }
+            }, { passive: true });
+        })();
+
+        // 画像カルーセル（4秒間隔）。prefers-reduced-motion時は停止
+        (function () {
+            var imgs = document.querySelectorAll('.hero-phone-carousel .hero-phone-img');
+            if (imgs.length < 2) return;
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (reduceMotion.matches) return;
+            var current = 0;
+            setInterval(function () {
+                imgs[current].classList.remove('active');
+                current = (current + 1) % imgs.length;
+                imgs[current].classList.add('active');
+            }, 4000);
+        })();
+
+        // スクロールアニメーション（IntersectionObserver）
+        (function () {
+            var targets = document.querySelectorAll('.animate-on-scroll');
+            if (!targets.length || !('IntersectionObserver' in window)) return;
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            targets.forEach(function (el) { observer.observe(el); });
+        })();
+
+        // FAQアコーディオン
+        (function () {
+            var questions = document.querySelectorAll('.faq-question');
+            questions.forEach(function (q) {
+                q.addEventListener('click', function () {
+                    var item = this.closest('.faq-item');
+                    var wasOpen = item.classList.contains('open');
+                    // 他を閉じる
+                    document.querySelectorAll('.faq-item.open').forEach(function (openItem) {
+                        openItem.classList.remove('open');
+                        openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                        openItem.querySelector('.faq-answer').setAttribute('aria-hidden', 'true');
+                    });
+                    // トグル
+                    if (!wasOpen) {
+                        item.classList.add('open');
+                        this.setAttribute('aria-expanded', 'true');
+                        item.querySelector('.faq-answer').setAttribute('aria-hidden', 'false');
+                    }
+                });
+                // キーボードアクセシビリティ
+                q.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>
