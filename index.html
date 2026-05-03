@@ -9,17 +9,19 @@
     <link rel="icon" type="image/png" href="image/icon.png">
     <link rel="apple-touch-icon" href="image/icon.png">
 
-    <!-- Smart App Banner (iOS Safari / Google Play) -->
+    <!-- Smart App Banner (iOS Safari) -->
     <!-- TODO: ストアIDが確定したら更新 -->
     <!-- <meta name="apple-itunes-app" content="app-id=XXXXXXXXX"> -->
+    <!-- TODO: Android版リリース時に有効化
     <meta name="google-play-app" content="app-id=com.sikakou.passlog">
+    -->
 
     <!-- SEO -->
     <title>PassLog - パスワード履歴管理アプリ｜変更履歴・ルール生成・適合チェック【基本無料】</title>
     <meta name="description"
-        content="【基本無料】パスワードの変更履歴を端末内で記録・管理。ルールに沿ったパスワード自動生成・6項目の適合チェック・ワークスペース分類。完全オフライン・アカウント不要・AES-256-GCM暗号化。iOS/Android対応。">
+        content="【基本無料】パスワードの変更履歴を端末内で記録・管理。ルールに沿ったパスワード自動生成・6項目の適合チェック・ワークスペース分類。完全オフライン・アカウント不要・暗号化で保護。iOS対応（Android版は後日対応予定）。">
     <meta name="keywords"
-        content="PassLog, パスワード管理, パスワード履歴, パスワード生成, パスワードチェック, パスワード管理アプリ, 無料, セキュリティ, AES-256暗号化, ワークスペース, オフライン, 機種変更, バックアップ">
+        content="PassLog, パスワード管理, パスワード履歴, パスワード生成, パスワードチェック, パスワード管理アプリ, 無料, セキュリティ, 暗号化, ワークスペース, オフライン, 機種変更, バックアップ">
     <meta name="robots" content="index, follow">
     <meta name="author" content="PassLog">
 
@@ -35,7 +37,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="PassLog - パスワード履歴管理アプリ｜変更履歴・ルール生成・適合チェック【基本無料】">
     <meta property="og:description"
-        content="【基本無料】パスワードの変更履歴を端末内で記録・管理。ルールに沿った自動生成・6項目の適合チェック。完全オフライン・アカウント不要。iOS/Android対応。">
+        content="【基本無料】パスワードの変更履歴を端末内で記録・管理。ルールに沿った自動生成・6項目の適合チェック。完全オフライン・アカウント不要。iOS対応（Android版は後日対応予定）。">
     <meta property="og:url" content="https://passlog.net/">
     <meta property="og:site_name" content="PassLog">
     <meta property="og:locale" content="ja_JP">
@@ -45,7 +47,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="PassLog - パスワード履歴管理アプリ【基本無料】">
-    <meta name="twitter:description" content="【基本無料】パスワードの変更履歴を端末内で記録・管理。ルールベース生成・適合チェック。端末内保存・アカウント不要。iOS/Android対応。">
+    <meta name="twitter:description" content="【基本無料】パスワードの変更履歴を端末内で記録・管理。ルールベース生成・適合チェック。端末内保存・アカウント不要。iOS対応（Android版は後日対応予定）。">
     <meta name="twitter:image" content="https://passlog.net/image/icon.png">
 
     <!-- Theme Color -->
@@ -61,14 +63,14 @@
         "@type": "SoftwareApplication",
         "name": "PassLog",
         "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "iOS 16.0+, Android 13.0+",
+        "operatingSystem": "iOS 16.0+",
         "offers": [
             {
                 "@type": "Offer",
                 "price": "0",
                 "priceCurrency": "JPY",
                 "name": "Free",
-                "description": "基本無料プラン（システム10件・ルール3件・ワークスペース1つまで）",
+                "description": "基本無料プラン（ルール3件・ワークスペース1つまで／システム登録は無制限）",
                 "availability": "https://schema.org/InStock"
             },
             {
@@ -109,15 +111,15 @@
             "ワークスペース（用途別のシステム分類）",
             "ルール共有（1つのルールを複数システムで参照）",
             "PIN・生体認証によるアプリロック",
-            "暗号化エクスポート・インポート（PBKDF2 600,000回反復 + AES-256-GCM）",
+            "暗号化されたバックアップファイルでのエクスポート・インポート",
             "インポート時のロールバック保護・プレビュー確認",
             "Premium期限切れ後も既存データは継続利用可能",
             "オフライン完全対応",
             "日本語・英語対応"
         ],
         "inLanguage": ["ja", "en"],
-        "softwareVersion": "4.0.0",
-        "datePublished": "2026-04-23",
+        "softwareVersion": "1.0.0",
+        "datePublished": "2026-04-28",
         "screenshot": "https://passlog.net/image/list.png",
         "author": {
             "@type": "Organization",
@@ -165,7 +167,7 @@
                 "name": "PassLogは無料で使えますか？",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "はい、基本機能は無料でお使いいただけます。システム10件・ルール3件・ワークスペース1つまで無料で管理できます。Premiumプラン（月額250円 / 年額2,500円）にアップグレードすると、すべて無制限になり広告も非表示になります。"
+                    "text": "はい、基本機能は無料でお使いいただけます。システム登録は無制限、ルール3件・ワークスペース1つまで無料で管理できます。Premiumプラン（月額250円 / 年額2,500円）にアップグレードすると、ルール・ワークスペースも無制限になり広告も非表示になります。"
                 }
             },
             {
@@ -173,7 +175,7 @@
                 "name": "パスワードデータはどこに保存されますか？",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "すべて端末内にローカル保存されます。サーバーに送信されることは一切ありません。パスワードデータはAES-256-GCM暗号化で保護され、暗号鍵はiOS Keychain / Android Keystoreに安全に保管されます。"
+                    "text": "すべて端末内にローカル保存されます。サーバーに送信されることは一切ありません。パスワードデータは暗号化で保護され、暗号化に使用する鍵はOSが提供する安全な保管領域に保管されます。"
                 }
             },
             {
@@ -181,7 +183,7 @@
                 "name": "データのセキュリティは大丈夫ですか？",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "パスワードデータはAES-256-GCM暗号化で端末内に保存されます。暗号鍵は256bitランダム生成、iOS Keychain / Android Keystoreに保管。PINはソルト付きSHA-256ハッシュで安全に保管されます。エクスポートファイルはPBKDF2（600,000回反復）で鍵導出しAES-256-GCMで暗号化。インターネットへの送信は一切行いません。アプリはPIN・生体認証（Face ID / 指紋認証）でロックでき、バックグラウンド復帰時にも自動ロックされます。"
+                    "text": "パスワードデータは暗号化で端末内に保存されます。暗号化に使用する鍵は端末内でランダムに生成し、OSが提供する安全な保管領域に保管。PINは元の値に戻せない形式に変換して安全に保管されます。バックアップファイルもユーザーが設定するパスワードを元に暗号化で暗号化。インターネットへの送信は一切行いません。アプリはPIN・生体認証（Face ID / 指紋認証）でロックでき、バックグラウンド復帰時にも自動ロックされます。"
                 }
             },
             {
@@ -197,7 +199,7 @@
                 "name": "機種変更時にデータを移行できますか？",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "はい、エクスポート機能でPBKDF2鍵導出+AES-256-GCM暗号化したファイル（.passlog形式）を出力し、新しい端末でインポートできます。エクスポートファイルはパスワードで保護されます。インポートは完全置き換え方式で、プレビュー画面でデータ概要を確認後に実行。インポート失敗時は自動ロールバックでデータが保護されます。"
+                    "text": "はい、エクスポート機能で暗号化されたバックアップファイルを出力し、新しい端末でインポートできます。バックアップファイルはユーザーが設定するパスワードで保護されます。インポートは完全置き換え方式で、プレビュー画面でデータ概要を確認後に実行。インポート失敗時は自動ロールバックでデータが保護されます。"
                 }
             },
             {
@@ -229,7 +231,7 @@
                 "name": "Premiumプランとは何ですか？",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "月額250円または年額2,500円のサブスクリプションです。システム数・ルール数・ワークスペース数が無制限になり、広告も非表示になります。App Store / Google Play経由で購入でき、いつでもキャンセルできます。「購入を復元」で既に購入済みのサブスクリプションも復元可能です。期限切れ後もFreeプランとして継続利用でき、既存データの閲覧・編集・コピー・削除は引き続き可能です。"
+                    "text": "月額250円または年額2,500円のサブスクリプションです。システム数・ルール数・ワークスペース数が無制限になり、広告も非表示になります。App Store経由で購入でき、いつでもキャンセルできます。「購入を復元」で既に購入済みのサブスクリプションも復元可能です。期限切れ後もFreeプランとして継続利用でき、既存データの閲覧・編集・コピー・削除は引き続き可能です。"
                 }
             },
             {
@@ -245,7 +247,7 @@
                 "name": "対応OSは？",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "iOS 16以上、Android 13以上に対応しています。"
+                    "text": "iOS 16以上に対応しています。Android版は後日対応予定です。"
                 }
             },
             {
@@ -261,7 +263,7 @@
                 "name": "Premiumを解約したらデータはどうなりますか？",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "解約後もFreeプランとして継続利用できます。既存のシステム・ルール・ワークスペースの閲覧・編集・コピー・削除は引き続き可能です。Freeティアの上限（システム10件・ルール3件・ワークスペース1つ）を超えている場合は、新規作成のみ制限されます。データを人質にすることはありません。"
+                    "text": "解約後もFreeプランとして継続利用できます。既存のシステム・ルール・ワークスペースの閲覧・編集・コピー・削除は引き続き可能です。Freeティアの上限（ルール3件・ワークスペース1つ）を超えている場合は、新規作成のみ制限されます（システム登録は Free でも無制限のため影響なし）。データを人質にすることはありません。"
                 }
             },
             {
@@ -269,7 +271,7 @@
                 "name": "エクスポートファイルのセキュリティは？",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "エクスポートファイル（.passlog形式）は、PBKDF2（600,000回反復）で鍵導出し、AES-256-GCMで暗号化されます。ユーザーが設定したパスワード（8文字以上）で保護され、SHA-256チェックサムでデータ整合性も検証されます。デバイス固有の暗号鍵はファイルに含まれないため、安全に共有できます。"
+                    "text": "バックアップファイルは、ユーザーが設定したパスワード（8文字以上）を元に暗号化で暗号化されます。インポート時にはファイルが破損・改ざんされていないかを自動で検証します。端末内に保管している暗号鍵はファイルに含まれないため、安全に共有できます。"
                 }
             },
             {
@@ -383,7 +385,7 @@
                         残せるアプリ。
                     </h1>
                     <p class="hero-subtitle">定期変更のたびに忘れる、ルールが複雑で作れない、クラウドには預けたくない。PassLogなら、すべて端末内で完結。</p>
-                    <!-- リリース前のためストアバッジは非表示（リリース時に復元）
+                    <!-- リリース前のためストアバッジは非表示（iOS版リリース時にApp Storeバッジから復元 / Google PlayバッジはAndroid版リリース時に有効化）
                     <div class="hero-actions">
                         <div class="store-badges">
                             <a href="#" class="store-badge" target="_blank" rel="noopener" aria-label="App Storeでダウンロード">
@@ -397,8 +399,8 @@
                     -->
                     <div class="hero-stats">
                         <div class="hero-stat">
-                            <div class="hero-stat-value">AES-256</div>
-                            <div class="hero-stat-label">GCM暗号化</div>
+                            <div class="hero-stat-value">暗号化</div>
+                            <div class="hero-stat-label">で保護</div>
                         </div>
                         <div class="hero-stat">
                             <div class="hero-stat-value">6項目</div>
@@ -445,7 +447,7 @@
                         <span class="pillar-num">01</span>
                         <div class="pillar-icon" aria-hidden="true">&#x1F512;</div>
                         <h3>完全オフライン・<br>端末内完結</h3>
-                        <p>データは端末内にのみ保存。サーバー送信もアカウント登録も不要。AES-256-GCMで暗号化、暗号鍵はOSのセキュアストレージに保管。</p>
+                        <p>データは端末内にのみ保存。サーバー送信もアカウント登録も不要。暗号化で保護し、暗号化に使用する鍵はOSが提供する安全な保管領域に保管。</p>
                     </div>
                     <div class="pillar-card animate-on-scroll">
                         <span class="pillar-num">02</span>
@@ -501,13 +503,13 @@
                     <div class="scene-card animate-on-scroll">
                         <span class="scene-emoji" aria-hidden="true">&#x1F512;</span>
                         <h3>「クラウドに預けるのは不安…」</h3>
-                        <p>PassLogはパスワードデータを外部に送信しない。すべて端末内に保存、AES-256-GCM暗号化。アカウント登録も不要。</p>
+                        <p>PassLogはパスワードデータを外部に送信しない。すべて端末内に保存、暗号化で保護。アカウント登録も不要。</p>
                         <span class="scene-arrow" aria-hidden="true">&#x2192; 完全ローカルで解決</span>
                     </div>
                     <div class="scene-card animate-on-scroll">
                         <span class="scene-emoji" aria-hidden="true">&#x1F4F1;</span>
                         <h3>「機種変更したら<br>データが消える？」</h3>
-                        <p>PBKDF2鍵導出+AES-256-GCM暗号化でエクスポート。新端末にインポートするだけで完全復元。失敗時は自動ロールバックでデータを保護。</p>
+                        <p>暗号化で保護したバックアップファイルでエクスポート。新端末にインポートするだけで完全復元。失敗時は自動ロールバックでデータを保護。</p>
                         <span class="scene-arrow" aria-hidden="true">&#x2192; エクスポート・インポートで解決</span>
                     </div>
                     <div class="scene-card animate-on-scroll">
@@ -619,7 +621,7 @@
                     <div class="feature-card animate-on-scroll">
                         <div class="feature-icon-wrap" aria-hidden="true">&#x1F4E6;</div>
                         <h3>暗号化エクスポート・インポート</h3>
-                        <p>全データをPBKDF2鍵導出+AES-256-GCM暗号化ファイル（.passlog形式）でバックアップ。インポート前にプレビュー確認、失敗時は自動ロールバックでデータを保護。</p>
+                        <p>全データを暗号化で保護したバックアップファイルとして出力。インポート前にプレビュー確認、失敗時は自動ロールバックでデータを保護。</p>
                     </div>
                     <div class="feature-card animate-on-scroll">
                         <div class="feature-icon-wrap" aria-hidden="true">&#x1F30D;</div>
@@ -643,7 +645,7 @@
                 <div class="security-header">
                     <span class="section-label" lang="en" style="color: var(--accent-light);">SECURITY</span>
                     <h2 class="security-title">あなたのパスワードは、<br>あなたの端末だけに。</h2>
-                    <p class="security-desc">パスワードデータは外部サーバーに送信しません。AES-256-GCM暗号化で保護します。</p>
+                    <p class="security-desc">パスワードデータは外部サーバーに送信しません。暗号化で保護します。</p>
                 </div>
             </div>
             <div class="security-grid">
@@ -654,13 +656,13 @@
                 </div>
                 <div class="security-card animate-on-scroll">
                     <div class="security-icon" aria-hidden="true">&#x1F6E1;&#xFE0F;</div>
-                    <h3>AES-256-GCM暗号化</h3>
-                    <p>広く信頼されている暗号化方式でデータを保護。暗号鍵は256bitランダム生成、iOS Keychain / Android Keystoreに安全に保管。</p>
+                    <h3>暗号化で保護</h3>
+                    <p>広く信頼されている暗号化方式でデータを保護。暗号化に使用する鍵は端末内でランダムに生成し、OSが提供する安全な保管領域に保管。</p>
                 </div>
                 <div class="security-card animate-on-scroll">
                     <div class="security-icon" aria-hidden="true">&#x1F510;</div>
                     <h3>PIN・生体認証ロック</h3>
-                    <p>4桁PINとFace ID / 指紋認証でアプリをロック。PINはソルト付きSHA-256ハッシュで保管。バックグラウンド復帰時にも自動ロック。</p>
+                    <p>4桁PINとFace ID / 指紋認証でアプリをロック。PINは元の値に戻せない形式に変換して保管。バックグラウンド復帰時にも自動ロック。</p>
                 </div>
                 <div class="security-card animate-on-scroll">
                     <div class="security-icon" aria-hidden="true">&#x1F464;</div>
@@ -670,10 +672,10 @@
                 <div class="security-card animate-on-scroll">
                     <div class="security-icon" aria-hidden="true">&#x1F4E6;</div>
                     <h3>暗号化バックアップ</h3>
-                    <p>エクスポートファイルはPBKDF2（600,000回反復）で鍵導出し、AES-256-GCMで暗号化。SHA-256チェックサムでデータ整合性も検証。</p>
+                    <p>バックアップファイルはユーザーが設定するパスワードを元に暗号化で暗号化。インポート時にはファイルが破損・改ざんされていないかを自動で検証。</p>
                 </div>
             </div>
-            <p class="security-note">対応OS: iOS 16.0+ / Android 13.0+</p>
+            <p class="security-note">対応OS: iOS 16.0+（Android版は後日対応予定）</p>
         </section>
 
         <!-- ========================
@@ -787,7 +789,7 @@
                         <div class="plan-name">Free</div>
                         <div class="plan-price">無料</div>
                         <ul class="plan-features">
-                            <li><span class="plan-check">&#x2713;</span> システム管理（最大10件）</li>
+                            <li><span class="plan-check">&#x2713;</span> システム管理（無制限）</li>
                             <li><span class="plan-check">&#x2713;</span> パスワード管理・履歴</li>
                             <li><span class="plan-check">&#x2713;</span> ルール設定（最大3件）</li>
                             <li><span class="plan-check">&#x2713;</span> ワークスペース（1つ）</li>
@@ -805,7 +807,7 @@
                             <span class="plan-price-highlight">年額プランなら2ヶ月分おトク</span>
                         </div>
                         <ul class="plan-features">
-                            <li><span class="plan-check">&#x2713;</span> <strong>システム管理（無制限）</strong></li>
+                            <li><span class="plan-check">&#x2713;</span> システム管理（無制限）</li>
                             <li><span class="plan-check">&#x2713;</span> パスワード管理・履歴</li>
                             <li><span class="plan-check">&#x2713;</span> <strong>ルール設定（無制限）</strong></li>
                             <li><span class="plan-check">&#x2713;</span> <strong>ワークスペース（無制限）</strong></li>
@@ -820,8 +822,8 @@
                     <span class="plans-notice-icon" aria-hidden="true">&#x1F6E1;&#xFE0F;</span>
                     <div class="plans-notice-body">
                         <strong>Premium期限切れ後も、既存データは全機能で継続利用可能。</strong>
-                        閲覧・編集・コピー・削除はすべて引き続き可能で、Free上限（システム10件・ルール3件・ワークスペース1つ）を超える場合は新規作成のみが制限されます。購入の復元もApp Store /
-                        Google Playから行えます。
+                        閲覧・編集・コピー・削除はすべて引き続き可能で、Free上限（ルール3件・ワークスペース1つ）を超える場合はルール・ワークスペースの新規作成のみが制限されます（システム登録は Free でも無制限）。購入の復元もApp
+                        Storeから行えます。
                     </div>
                 </div>
             </div>
@@ -847,8 +849,8 @@
                         </div>
                         <div class="faq-answer" aria-hidden="true">
                             <div class="faq-answer-inner">
-                                はい、基本機能は無料でお使いいただけます。システム10件・ルール3件・ワークスペース1つまで無料で管理できます。Premiumプラン（月額250円 /
-                                年額2,500円）にアップグレードすると、すべて無制限になり広告も非表示になります。
+                                はい、基本機能は無料でお使いいただけます。システム登録は無制限、ルール3件・ワークスペース1つまで無料で管理できます。Premiumプラン（月額250円 /
+                                年額2,500円）にアップグレードすると、ルール・ワークスペースも無制限になり広告も非表示になります。
                             </div>
                         </div>
                     </div>
@@ -862,8 +864,7 @@
                         </div>
                         <div class="faq-answer" aria-hidden="true">
                             <div class="faq-answer-inner">
-                                すべて端末内にローカル保存されます。サーバーに送信されることは一切ありません。パスワードデータはAES-256-GCM暗号化で保護され、暗号鍵はiOS Keychain /
-                                Android Keystoreに安全に保管されます。
+                                すべて端末内にローカル保存されます。サーバーに送信されることは一切ありません。パスワードデータは暗号化で保護され、暗号化に使用する鍵はOSが提供する安全な保管領域に保管されます。
                             </div>
                         </div>
                     </div>
@@ -877,8 +878,7 @@
                         </div>
                         <div class="faq-answer" aria-hidden="true">
                             <div class="faq-answer-inner">
-                                パスワードデータはAES-256-GCM暗号化で端末内に保存されます。暗号鍵は256bitランダム生成、iOS Keychain / Android
-                                Keystoreに保管。PINはソルト付きSHA-256ハッシュで安全に保管されます。エクスポートファイルはPBKDF2（600,000回反復）で鍵導出しAES-256-GCMで暗号化。インターネットへの送信は一切行いません。アプリはPIN・生体認証（Face
+                                パスワードデータは暗号化で端末内に保存されます。暗号化に使用する鍵は端末内でランダムに生成し、OSが提供する安全な保管領域に保管。PINは元の値に戻せない形式に変換して安全に保管されます。バックアップファイルもユーザーが設定するパスワードを元に暗号化で暗号化。インターネットへの送信は一切行いません。アプリはPIN・生体認証（Face
                                 ID / 指紋認証）でロックでき、バックグラウンド復帰時にも自動ロックされます。
                             </div>
                         </div>
@@ -907,7 +907,7 @@
                         </div>
                         <div class="faq-answer" aria-hidden="true">
                             <div class="faq-answer-inner">
-                                はい、エクスポート機能でPBKDF2鍵導出+AES-256-GCM暗号化したファイル（.passlog形式）を出力し、新しい端末でインポートできます。エクスポートファイルはパスワードで保護されます。インポートは完全置き換え方式で、プレビュー画面でデータ概要（システム数・履歴数・ルール数）を確認後に実行。インポート失敗時は自動ロールバックでデータが保護されます。
+                                はい、エクスポート機能で暗号化されたバックアップファイルを出力し、新しい端末でインポートできます。バックアップファイルはユーザーが設定するパスワードで保護されます。インポートは完全置き換え方式で、プレビュー画面でデータ概要（システム数・履歴数・ルール数）を確認後に実行。インポート失敗時は自動ロールバックでデータが保護されます。
                             </div>
                         </div>
                     </div>
@@ -979,8 +979,8 @@
                         </div>
                         <div class="faq-answer" aria-hidden="true">
                             <div class="faq-answer-inner">
-                                月額250円または年額2,500円のサブスクリプションです。システム数・ルール数・ワークスペース数が無制限になり、広告も非表示になります。App Store / Google
-                                Play経由で購入でき、いつでもキャンセルできます。「購入を復元」で既に購入済みのサブスクリプションも復元可能です。期限切れ後もFreeプランとして継続利用でき、既存データの閲覧・編集・コピー・削除は引き続き可能です。
+                                月額250円または年額2,500円のサブスクリプションです。システム数・ルール数・ワークスペース数が無制限になり、広告も非表示になります。App
+                                Store経由で購入でき、いつでもキャンセルできます。「購入を復元」で既に購入済みのサブスクリプションも復元可能です。期限切れ後もFreeプランとして継続利用でき、既存データの閲覧・編集・コピー・削除は引き続き可能です。
                             </div>
                         </div>
                     </div>
@@ -994,7 +994,7 @@
                         </div>
                         <div class="faq-answer" aria-hidden="true">
                             <div class="faq-answer-inner">
-                                iOS 16以上、Android 13以上に対応しています。
+                                iOS 16以上に対応しています。Android版は後日対応予定です。
                             </div>
                         </div>
                     </div>
@@ -1022,7 +1022,7 @@
                         </div>
                         <div class="faq-answer" aria-hidden="true">
                             <div class="faq-answer-inner">
-                                解約後もFreeプランとして継続利用できます。既存のシステム・ルール・ワークスペースの閲覧・編集・コピー・削除は引き続き可能です。Freeティアの上限（システム10件・ルール3件・ワークスペース1つ）を超えている場合は、新規作成のみ制限されます。データを人質にすることはありません。
+                                解約後もFreeプランとして継続利用できます。既存のシステム・ルール・ワークスペースの閲覧・編集・コピー・削除は引き続き可能です。Freeティアの上限（ルール3件・ワークスペース1つ）を超えている場合は、新規作成のみ制限されます（システム登録は Free でも無制限のため影響なし）。データを人質にすることはありません。
                             </div>
                         </div>
                     </div>
@@ -1036,7 +1036,7 @@
                         </div>
                         <div class="faq-answer" aria-hidden="true">
                             <div class="faq-answer-inner">
-                                エクスポートファイル（.passlog形式）は、PBKDF2（600,000回反復）で鍵導出し、AES-256-GCMで暗号化されます。ユーザーが設定したパスワード（8文字以上）で保護され、SHA-256チェックサムでデータ整合性も検証されます。デバイス固有の暗号鍵はファイルに含まれないため、安全に共有できます。
+                                バックアップファイルは、ユーザーが設定したパスワード（8文字以上）を元に暗号化で暗号化されます。インポート時にはファイルが破損・改ざんされていないかを自動で検証します。端末内に保管している暗号鍵はファイルに含まれないため、安全に共有できます。
                             </div>
                         </div>
                     </div>
@@ -1065,7 +1065,7 @@
             <div class="cta-content">
                 <h2 class="cta-title">パスワード管理を、<br>今日から変えよう。</h2>
                 <p class="cta-desc">基本無料・アカウント登録不要。<br>ダウンロードして、すぐに使い始められます。</p>
-                <!-- リリース前のためストアバッジは非表示（リリース時に復元）
+                <!-- リリース前のためストアバッジは非表示（iOS版リリース時にApp Storeバッジから復元 / Google PlayバッジはAndroid版リリース時に有効化）
                 <div class="cta-buttons">
                     <a href="#" class="store-badge" target="_blank" rel="noopener" aria-label="App Storeでダウンロード">
                         <img src="image/ios-badge.svg" alt="App Storeからダウンロード" height="56" loading="lazy">

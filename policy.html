@@ -14,14 +14,15 @@
     <div class="legal-container">
       <header class="legal-header">
         <h1 class="legal-title">プライバシーポリシー</h1>
-        <p class="legal-meta">最終更新日: 2026年4月23日</p>
+        <p class="legal-meta">最終更新日: 2026年4月26日</p>
       </header>
 
       <article class="legal-content">
         <section class="legal-section">
           <h2>1. 基本方針</h2>
-          <p>PassLog（以下「本アプリ」）は、ユーザーのプライバシー保護を最優先とします。パスワードデータは端末内でのみ管理し、開発者サーバーへの送信は行いません。アカウント登録も不要です。</p>
-          <p>Freeプランでは広告配信サービス（Google AdMob）を通じてバナー広告を表示します。iOSではApp Tracking Transparency（ATT）の許可状況に応じて、パーソナライズド広告または非パーソナライズド広告を配信します。Premiumプランでは広告は表示されません。</p>
+          <p>PassLog（以下「本アプリ」）は、ユーザーのプライバシー保護を最優先とします。パスワードデータ（システム情報、パスワード、履歴、ルール、ワークスペース）は端末内でのみ管理し、開発者サーバーへの送信は行いません。パスワード管理機能の利用にアカウント登録は不要です。</p>
+          <p>Premiumプラン（購入・復元・管理）の利用時のみ、AppleまたはGoogleアカウントによるサインインが必要です。サインインで取得した情報はサブスクリプション管理の目的でのみ利用され、パスワードデータと結びつけて保管・送信されることはありません。</p>
+          <p>Freeプランでは広告配信サービス（Google AdMob）を通じて広告を表示します。iOSではApp Tracking Transparency（ATT）の許可状況に応じて、パーソナライズド広告または非パーソナライズド広告を配信します。Premiumプランでは広告は表示されません。</p>
         </section>
 
         <section class="legal-section">
@@ -32,10 +33,11 @@
               <tr><th>分類</th><th>内容</th><th>保存先</th></tr>
             </thead>
             <tbody>
-              <tr><td>認証情報</td><td>PINのソルト付きハッシュ、生体認証の有効/無効</td><td>端末内（セキュアストレージ）</td></tr>
-              <tr><td>アプリデータ</td><td>システム情報、パスワード（AES-256-GCM暗号化）、変更履歴、ルール、ワークスペース</td><td>端末内</td></tr>
-              <tr><td>課金情報</td><td>プラン状態、有効期限などの購読状態</td><td>RevenueCat（課金管理サービス）</td></tr>
-              <tr><td>広告関連情報</td><td>広告ID（IDFA / GAID）、IPアドレス、デバイス情報等（Freeプランのみ）</td><td>Google AdMob</td></tr>
+              <tr><td>認証情報</td><td>PINを元の値に戻せない形式に変換したデータ、生体認証の有効/無効</td><td>端末内（OSが提供する安全な保管領域）</td></tr>
+              <tr><td>アプリデータ</td><td>システム情報、パスワード（暗号化して保存）、変更履歴、ルール、ワークスペース</td><td>端末内</td></tr>
+              <tr><td>アカウント連携情報</td><td>Apple / Google サインイン時に取得するユーザー識別用のID、メールアドレス、表示名（Premiumプラン利用時のみ）</td><td>Firebase Authentication</td></tr>
+              <tr><td>課金情報</td><td>プラン状態、有効期限などの購読状態（アカウント連携時はユーザー識別用のIDと紐付け）</td><td>RevenueCat（課金管理サービス）</td></tr>
+              <tr><td>広告関連情報</td><td>広告識別子、IPアドレス、デバイス情報等（Freeプランのみ）</td><td>Google AdMob</td></tr>
             </tbody>
           </table>
         </section>
@@ -44,34 +46,55 @@
           <h2>3. 第三者サービス</h2>
           <p>本アプリは以下の第三者サービスを利用しています。各サービスのプライバシーポリシーも併せてご確認ください。</p>
           <ul>
+            <li>Firebase Authentication（アカウント認証サービス。Apple / Google サインインによるアカウント連携、Premiumプラン利用時）— <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a></li>
+            <li>Apple（Sign in with Apple、iOSのみ）— <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a></li>
+            <li>Google（Google サインイン）— <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a></li>
             <li>RevenueCat（サブスクリプション管理）— <a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a></li>
             <li>Google AdMob（広告配信、Freeプランのみ）— <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a></li>
           </ul>
         </section>
 
         <section class="legal-section">
-          <h2>4. データのセキュリティ</h2>
+          <h2>4. 広告について</h2>
+          <p>Freeプランでは Google AdMob によるバナー広告を表示します。Premiumプランでは広告は表示されません。</p>
           <ul>
-            <li>パスワードデータはAES-256-GCMで暗号化して端末内に保存し、平文での保存は行いません。</li>
-            <li>暗号鍵は256bitランダム生成し、iOS Keychain / Android Keystoreに保管します。</li>
-            <li>PINはソルト付きSHA-256ハッシュで保存します。</li>
-            <li>エクスポートファイル（.passlog形式）はPBKDF2（600,000回反復）で鍵導出し、AES-256-GCMで暗号化します。</li>
+            <li>広告配信のため、Google AdMob は広告識別子・IPアドレス・デバイス情報等を収集することがあります</li>
+            <li>iOSではApp Tracking Transparency（ATT）の許可状況により、パーソナライズド広告または非パーソナライズド広告を切り替えて配信します</li>
+            <li>Androidでは、ユーザーは「設定」→「Google」→「広告」から広告のパーソナライゼーションを管理できます</li>
+            <li>AdMobにおける情報の取り扱いについては、<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Googleのプライバシーポリシー</a>をご確認ください</li>
           </ul>
         </section>
 
         <section class="legal-section">
-          <h2>5. エクスポート・削除</h2>
-          <p>エクスポートファイルはユーザーが設定するパスワード（8文字以上）で暗号化されます。SHA-256チェックサムでデータ整合性も検証されます。デバイス固有の暗号鍵はファイルに含まれないため、安全に別端末への移行が可能です。</p>
+          <h2>5. アカウント連携と削除</h2>
+          <p>Premiumプランの利用時には、AppleまたはGoogleアカウントでのサインインを通じて本アプリのアカウント認証サービスによるユーザー識別用のIDが発行され、メールアドレスおよび表示名と併せて取得されます。これらの情報はサブスクリプション管理サービス（RevenueCat）と紐付けてサブスクリプション状態を管理する目的にのみ利用し、パスワードデータと結びつけることはありません。なお、Apple サインインの利用時は、不正なサインイン試行を防止する目的で、Apple が定める仕様に基づいた検証用データを生成して Apple 側に送信します。</p>
+          <p>連携解除（アカウント削除）は、設定画面の「アカウント連携 → 連携解除」から実施できます。連携解除を行うと本アプリのアカウント認証サービス上のアカウントが削除され、紐付いていたサブスクリプション管理サービス上の識別情報も匿名状態に戻ります。端末内のパスワードデータは削除されません。</p>
+          <p>なお、Apple ID やGoogleアカウント本体は、各プラットフォーム提供者の管理下にあります。これらの完全な削除を希望される場合は、各プラットフォームの提供する手続きに従ってください。</p>
+        </section>
+
+        <section class="legal-section">
+          <h2>6. データのセキュリティ</h2>
+          <ul>
+            <li>パスワードデータは暗号化で暗号化して端末内に保存し、暗号化されていない状態で保存することはありません。</li>
+            <li>暗号化に使用する鍵は端末内でランダムに生成し、OSが提供する安全な保管領域に保管します。</li>
+            <li>PINは元の値に戻せない形式に変換して保存します。</li>
+            <li>バックアップファイルはユーザーが設定するパスワードを元に暗号化で暗号化します。</li>
+          </ul>
+        </section>
+
+        <section class="legal-section">
+          <h2>7. エクスポート・削除</h2>
+          <p>バックアップファイルはユーザーが設定するパスワード（8文字以上）で暗号化されます。インポート時にはファイルが破損・改ざんされていないかを自動で検証します。端末内に保管している暗号鍵はファイルに含まれないため、安全に別端末への移行が可能です。</p>
           <p>データ削除は、アプリ内の操作（個別削除・全削除）またはアプリのアンインストールで実施できます。</p>
         </section>
 
         <section class="legal-section">
-          <h2>6. データの保持と削除</h2>
+          <h2>8. データの保持と削除</h2>
           <p>本アプリのデータは端末内に保存されており、アプリのアンインストールにより削除されます。ただし、端末のバックアップ機能（iCloud、Googleバックアップ等）を利用している場合、バックアップデータにアプリデータが含まれることがあります。完全な削除を希望される場合は、アンインストール前にアプリ内でデータを削除するか、端末のバックアップからも削除してください。</p>
         </section>
 
         <section class="legal-section">
-          <h2>7. ポリシー変更</h2>
+          <h2>9. ポリシー変更</h2>
           <p>本ポリシーを変更する場合、重要な変更についてはアプリ内通知など適切な方法でお知らせします。</p>
         </section>
       </article>
